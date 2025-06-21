@@ -1,0 +1,8 @@
+startDelaySeconds: 0
+lowercaseOutputName: true
+lowercaseOutputLabelNames: true
+rules:
+  - pattern: "org.apache.ZooKeeperService<name0=ReplicatedServer_id\\d+, name1=(.+), name2=(.+)><>(\\w+)"
+    name: zookeeper_$1_$2_$3
+    type: GAUGE
+    help: "Zookeeper metric $1 $2 $3"

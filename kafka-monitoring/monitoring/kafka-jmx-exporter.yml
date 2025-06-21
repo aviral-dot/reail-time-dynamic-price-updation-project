@@ -1,0 +1,25 @@
+startDelaySeconds: 0
+lowercaseOutputName: true
+lowercaseOutputLabelNames: true
+rules:
+  # 🔹 Per-topic metrics (must come first!)
+  - pattern: 'kafka.server<type=BrokerTopicMetrics, name=(MessagesInPerSec|BytesInPerSec|BytesOutPerSec), topic=(.+)><>Count'
+    name: kafka_server_brokertopicmetrics_$1_total
+    labels:
+      topic: "$2"
+    type: COUNTER
+    help: "Kafka broker topic metric $1 for topic $2"
+
+  # 🔸 Generic BrokerTopicMetrics fallback
+  - pattern: 'kafka.server<type=BrokerTopicMetrics, name=(MessagesInPerSec|BytesInPerSec|BytesOutPerSec)><>Count'
+    name: kafka_server_brokertopicmetrics_$1_total
+    type: COUNTER
+    help: "Kafka broker topic metric $1 (all topics)"
+
+  # 🔹 Aggregated metrics (comes last)
+  - pattern: "kafka.server<type=(.+), name=(.+)PerSec\\w*><>Count"
+    name: kafka_server_$1_$2_total
+    type: COUNTER
+    help: "Kafka metric $1 $2"
+
+

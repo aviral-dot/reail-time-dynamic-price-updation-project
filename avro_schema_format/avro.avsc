@@ -1,0 +1,16 @@
+{
+  "type": "record",
+  "name": "PriceEvent",
+  "namespace": "com.example.dynamicpricing",
+  "fields": [
+    {"name": "timestamp", "type": "string"},
+    {"name": "hour", "type": "int"},
+    {"name": "day_of_week", "type": "int"},
+    {"name": "region", "type": "string"},
+    {"name": "weather", "type": "string"},
+    {"name": "demand", "type": "int"},
+    {"name": "inventory", "type": "int"},
+    {"name": "competitor_price", "type": "float"},
+    {"name": "actual_price", "type": "float"}
+  ]
+}
