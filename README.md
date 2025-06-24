@@ -153,6 +153,79 @@ Enable end-to-end testing of data ingestion, transformation, and model scoring.
 
 Mimic fluctuating pricing dynamics under various weather, traffic, and demand conditions.
 
+**📄 Sample Raw Data Format (CSV)**
+yaml
+Copy
+Edit
+2024-01-05 13:00:00,13,4,CA,Sunny,9,39,28.16,28.65
+<br>
+<br>
+
+![Screenshot 2025-06-25 045706](https://github.com/user-attachments/assets/ace586ea-77b2-4e86-9d47-e0918f424ec8)<br><br>
+
+**📡 Kafka Control Center — Real-Time Message Monitoring**
+Apache Kafka is at the heart of this project, enabling real-time data flow from producers (e.g., dynamic pricing event generator) to downstream consumers like Spark.
+
+To visualize and monitor the live Kafka topics, this project integrates the Confluent Control Center — a powerful GUI for Kafka operations.
+
+📷 Kafka Message Flow Example
+
+✅ The image above shows the Control Center UI displaying real-time messages published to the Kafka topic uber-ride-events. Each message represents a simulated ride event containing data like region, timestamp, weather, traffic level, and pricing.
+
+🧭 What You Can Monitor in the Control Center:
+Active topics and partitions (e.g., uber-ride-events)
+
+Message throughput and retention
+
+Real-time message content (in JSON or Avro)
+
+Producer/consumer performance
+
+Schema versioning via Schema Registry (if integrated)
+
+🔌 How to Access It
+Once the stack is running, you can access the Control Center at:
+
+arduino
+Copy
+Edit
+http://localhost:9021
+Login is not required by default (unless configured).
+
+THE MESSAGE IN THE IMAGE ARE THE MESSAGE OF REAL TIME DATA ARRIVING IN KAFKA TOPIC WHICH IS SHOWN BY CONTROL CENTER.<br><br>
+
+![Screenshot 2025-06-25 045840](https://github.com/user-attachments/assets/2d553057-a215-4c28-9a51-6e5a081622bc)<br><br>
+
+🧾 Schema Registry — Enforcing Data Contracts for Kafka
+To ensure consistent structure and backward-compatible data evolution, this project uses Confluent Schema Registry. It provides a centralized service for managing Avro schemas used when producing and consuming Kafka messages.
+
+Using Schema Registry avoids common issues like:
+
+Inconsistent field names or types
+
+Breaking changes in data formats
+
+Consumers failing due to unknown schemas
+
+🧬 How It Works
+The producer registers an Avro schema before sending messages
+
+The consumer retrieves and validates against the latest schema
+
+Schemas are versioned, allowing safe updates over time
+
+📷 Schema Registry in Action
+
+🧩 Above: The Schema Registry UI shows registered schemas for Kafka topics like uber-ride-events-value. Each schema describes the structure of data being sent, including fields such as region, timestamp, traffic_level, and final_price.
+
+THE SCHEMA REGISTRY REGISTER THE AVRO SCHEMA 
+
+![image](https://github.com/user-attachments/assets/1df82a58-39ec-4e1f-ab0e-b39fa14a5473)
+
+
+the image is of the avro schema of the data.
+
+
 
 
 
