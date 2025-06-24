@@ -81,6 +81,59 @@ Prometheus scrapes metrics and Grafana visualizes them for system observability.
 
 
 
+🐳 Dockerized Setup — Containerized Microservices Architecture
+This project leverages a fully Dockerized microservices architecture to orchestrate and manage each component of the real-time price prediction pipeline. Docker ensures a consistent, reproducible environment for both local development and production deployments. Each major service—Kafka, Spark, MongoDB, frontend/backend UI, monitoring stack—is encapsulated within its own container and coordinated using docker-compose.
+
+You can bring the entire system up with a single command:
+
+bash
+Copy
+Edit
+docker-compose up --build
+This command builds all necessary images (if not already built) and spins up containers with the predefined configuration—including memory/CPU limits, custom networks, mounted volumes, and exposed ports. Each service is linked to the others internally via Docker’s network bridge, ensuring seamless service-to-service communication.
+
+📷 Container Initialization Snapshot
+Below is a snapshot showing the live Docker container startup process during system initialization:
+
+
+📌 As shown above, all core services initialize in sequence:
+
+Kafka brokers and Schema Registry come online to handle incoming event streams.
+
+Spark Master and Workers register and prepare for distributed streaming jobs.
+
+MongoDB Replica Set is initialized with keyfile-based internal authentication.
+
+Node.js Backend connects to MongoDB and opens a WebSocket server.
+
+React Frontend launches the real-time UI dashboard.
+
+Prometheus and Grafana come online for system observability and performance monitoring.
+
+🧱 Microservices in Docker Compose
+Service	Role
+Kafka	Real-time messaging layer for ingesting Uber ride events
+Schema Registry	Ensures schema consistency for Kafka messages
+Apache Spark	Distributed data processing and ML model execution
+MongoDB Replica Set	Stores regional price predictions in a fault-tolerant way
+Node.js Backend	Bridges MongoDB change streams to frontend via WebSocket
+React Frontend	Live interface showing real-time price changes per region
+Prometheus	Collects metrics from all services
+Grafana	Dashboards for real-time system monitoring and alerting
+
+Each container is provisioned with:
+
+Health checks to verify readiness before linking with dependent services
+
+Named volumes to persist important data (MongoDB state, Grafana dashboards, etc.)
+
+Custom Docker networks (kafka-net, spark-net) for logical separation and efficiency
+
+Resource constraints to control memory/CPU usage per container
+
+
+
+
 
 
 
