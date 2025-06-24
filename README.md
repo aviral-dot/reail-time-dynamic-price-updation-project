@@ -43,6 +43,7 @@ Frontend (React): Dynamically displays updated regional prices as soon as they c
 
 
 **🔄 End-to-End Data Flow**
+
 Real-time ride data is pushed from the simulated Uber API to Kafka.
 
 Kafka streams the data into a topic defined with a schema registered in Schema Registry.
@@ -56,6 +57,7 @@ Backend service listens to MongoDB’s Change Streams and sends real-time update
 Frontend UI instantly reflects updated pricing per region.
 
 Prometheus scrapes metrics and Grafana visualizes them for system observability.
+
 
 ✅ Features
 🚀 Real-time data streaming & processing
