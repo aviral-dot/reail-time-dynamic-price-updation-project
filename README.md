@@ -1,4 +1,8 @@
-# real-time-dynamic-price-updation-project
+# Real-Time-Dynamic-Price-Updation-Project
+
+![image_alt](https://github.com/aviral-dot/real-time-dynamic-price-updation-project/blob/main/real-time-dynamic-price.drawio.png?raw=true)
+
+
 
 
 
