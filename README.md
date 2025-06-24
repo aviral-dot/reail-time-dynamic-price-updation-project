@@ -3,12 +3,17 @@
 ![image_alt](https://github.com/aviral-dot/real-time-dynamic-price-updation-project/blob/main/real-time-dynamic-price.drawio.png?raw=true)
 
 
-📈 Real-Time Dynamic Price Updation System — Dockerized End-to-End Pipeline
+
+
+**📈 Real-Time Dynamic Price Updation System — Dockerized End-to-End Pipeline**
 This project implements a real-time dynamic pricing system that emulates Uber-like ride price prediction and visualization. It is built using a modern big data and machine learning stack, fully containerized using Docker to ensure easy deployment, scalability, and modularity.
 
 The core idea is to simulate incoming Uber ride data, process it in real time using Apache Kafka and Apache Spark, apply machine learning models for price prediction (XGBoost), and reflect these dynamic changes instantly in a responsive UI. The entire flow is monitored using Prometheus and visualized using Grafana dashboards.
 
-🧩 System Architecture Overview
+
+
+
+**🧩 System Architecture Overview**
 The architecture is composed of several interconnected services working together in real time:
 
 🚖 Uber API Simulation: A mock service continuously generates real-time ride events (e.g., location, distance, time) and streams them into Kafka topics.
@@ -35,7 +40,9 @@ Frontend (React): Dynamically displays updated regional prices as soon as they c
 
 🐳 Dockerized Setup: Every service (Kafka, Spark, MongoDB, frontend, backend, monitoring) runs in isolated Docker containers, orchestrated via docker-compose for easy local development and reproducibility.
 
-🔄 End-to-End Data Flow
+
+
+**🔄 End-to-End Data Flow**
 Real-time ride data is pushed from the simulated Uber API to Kafka.
 
 Kafka streams the data into a topic defined with a schema registered in Schema Registry.
