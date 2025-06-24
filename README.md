@@ -136,6 +136,25 @@ Resource constraints to control memory/CPU usage per container
 <br>
 
 
+![image](https://github.com/user-attachments/assets/4ced7e10-6dc0-426b-a9e8-45ea566d3ec2)<br><br>
+
+
+THE PROJECT BEGINS WITH SENDING THE REAL TIME PRICE UPDATION DATA OF THE COMPETITORS OF  VARIOUS DIFFERENT PLACE IN ORDER TO COMPETE WITH THE PRICE AND CAPTURE THE CUSTOMERS. 
+THE DATA IS SENT TO THE KAFKA IN KAFKA TOPICS.
+
+This project includes a custom Python script that streams real-time Uber-like pricing data to Kafka. The script reads records in CSV format and emits structured events to a Kafka topic at a steady interval (e.g., 1 message per second per region). This simulated feed powers the real-time ML prediction and pricing pipeline.
+
+🧪 Purpose
+Simulate real-world Uber ride events with regional and environmental factors.
+
+Push live updates to Kafka, triggering real-time predictions by Apache Spark.
+
+Enable end-to-end testing of data ingestion, transformation, and model scoring.
+
+Mimic fluctuating pricing dynamics under various weather, traffic, and demand conditions.
+
+
+
 
 
 
