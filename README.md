@@ -77,6 +77,7 @@ Prometheus scrapes metrics and Grafana visualizes them for system observability.
 
 
 
+![Screenshot 2025-06-23 004757](https://github.com/user-attachments/assets/2e966768-1d38-4c86-babf-3ef6db8041f2)
 
 
 
