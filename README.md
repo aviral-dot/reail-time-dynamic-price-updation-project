@@ -29,6 +29,7 @@ The architecture is composed of several interconnected services working together
 🤖 XGBoost Model: A powerful gradient boosting model that uses multiple features from ride data to predict surge or drop in pricing per region.
 
 🗃️ MongoDB (Replica Set): Stores the latest predicted price for each region (NY, CA, TX, etc.) in a centralized price_history collection. The same document is updated for each new prediction using the region as _id.
+<br>
 
 🌐 Real-Time Web UI:<br>
 
@@ -72,7 +73,7 @@ Prometheus scrapes metrics and Grafana visualizes them for system observability.
 
 🐳 Fully Dockerized and reproducible setup
 
-📦 Schema evolution managed via Confluent Schema Registry
+📦 Schema evolution managed via Confluent Schema Registry<br><br>
 
 
 
