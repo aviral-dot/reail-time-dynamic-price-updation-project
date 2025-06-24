@@ -80,7 +80,7 @@ Prometheus scrapes metrics and Grafana visualizes them for system observability.
 
 ![Screenshot 2025-06-23 004757](https://github.com/user-attachments/assets/2e966768-1d38-4c86-babf-3ef6db8041f2)<br><br>
 
-
+![Screenshot 2025-06-23 004815](https://github.com/user-attachments/assets/fa59dd6e-70c7-4ad8-9186-83014a3cb135)<br><br>
 
 🐳 Dockerized Setup — Containerized Microservices Architecture<br>
 This project leverages a fully Dockerized microservices architecture to orchestrate and manage each component of the real-time price prediction pipeline. Docker ensures a consistent, reproducible environment for both local development and production deployments. Each major service—Kafka, Spark, MongoDB, frontend/backend UI, monitoring stack—is encapsulated within its own container and coordinated using docker-compose.
@@ -131,6 +131,10 @@ Named volumes to persist important data (MongoDB state, Grafana dashboards, etc.
 Custom Docker networks (kafka-net, spark-net) for logical separation and efficiency
 
 Resource constraints to control memory/CPU usage per container
+
+<br>
+<br>
+
 
 
 
