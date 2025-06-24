@@ -1,11 +1,11 @@
-# Real-Time-Dynamic-Price-Updation-Project
+# Real-Time-Dynamic-Price-Updation-Project<br><br>
 
-![image_alt](https://github.com/aviral-dot/real-time-dynamic-price-updation-project/blob/main/real-time-dynamic-price.drawio.png?raw=true)
-
-
+![image_alt](https://github.com/aviral-dot/real-time-dynamic-price-updation-project/blob/main/real-time-dynamic-price.drawio.png?raw=true)<br><br>
 
 
-**📈 Real-Time Dynamic Price Updation System — Dockerized End-to-End Pipeline**
+
+
+**📈 Real-Time Dynamic Price Updation System — Dockerized End-to-End Pipeline**<br>
 This project implements a real-time dynamic pricing system that emulates Uber-like ride price prediction and visualization. It is built using a modern big data and machine learning stack, fully containerized using Docker to ensure easy deployment, scalability, and modularity.
 
 The core idea is to simulate incoming Uber ride data, process it in real time using Apache Kafka and Apache Spark, apply machine learning models for price prediction (XGBoost), and reflect these dynamic changes instantly in a responsive UI. The entire flow is monitored using Prometheus and visualized using Grafana dashboards.
@@ -13,7 +13,7 @@ The core idea is to simulate incoming Uber ride data, process it in real time us
 
 
 
-**🧩 System Architecture Overview**
+**🧩 System Architecture Overview**<br>
 The architecture is composed of several interconnected services working together in real time:
 
 🚖 Uber API Simulation: A mock service continuously generates real-time ride events (e.g., location, distance, time) and streams them into Kafka topics.
@@ -30,7 +30,7 @@ The architecture is composed of several interconnected services working together
 
 🗃️ MongoDB (Replica Set): Stores the latest predicted price for each region (NY, CA, TX, etc.) in a centralized price_history collection. The same document is updated for each new prediction using the region as _id.
 
-🌐 Real-Time Web UI:
+🌐 Real-Time Web UI:<br>
 
 Backend (Node.js): Subscribes to MongoDB Change Streams and broadcasts updates to the frontend via WebSocket.
 
@@ -42,7 +42,7 @@ Frontend (React): Dynamically displays updated regional prices as soon as they c
 
 
 
-**🔄 End-to-End Data Flow**
+**🔄 End-to-End Data Flow**<br>
 
 Real-time ride data is pushed from the simulated Uber API to Kafka.
 
@@ -59,7 +59,7 @@ Frontend UI instantly reflects updated pricing per region.
 Prometheus scrapes metrics and Grafana visualizes them for system observability.
 
 
-✅ Features
+✅ Features<br>
 🚀 Real-time data streaming & processing
 
 🧠 Machine learning-based price prediction (XGBoost)
@@ -81,7 +81,7 @@ Prometheus scrapes metrics and Grafana visualizes them for system observability.
 
 
 
-🐳 Dockerized Setup — Containerized Microservices Architecture
+🐳 Dockerized Setup — Containerized Microservices Architecture<br>
 This project leverages a fully Dockerized microservices architecture to orchestrate and manage each component of the real-time price prediction pipeline. Docker ensures a consistent, reproducible environment for both local development and production deployments. Each major service—Kafka, Spark, MongoDB, frontend/backend UI, monitoring stack—is encapsulated within its own container and coordinated using docker-compose.
 
 You can bring the entire system up with a single command:
@@ -110,7 +110,7 @@ React Frontend launches the real-time UI dashboard.
 
 Prometheus and Grafana come online for system observability and performance monitoring.
 
-🧱 Microservices in Docker Compose
+🧱 Microservices in Docker Compose<br>
 Service	Role
 Kafka	Real-time messaging layer for ingesting Uber ride events
 Schema Registry	Ensures schema consistency for Kafka messages
